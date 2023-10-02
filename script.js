@@ -76,36 +76,24 @@ daysCalculator("2003-10-30", currentDate);
 daysCalculator("1-10-2023", currentDate); //ne marchera pas car pas bon format de date (aaaa-mm-jj)
 
 //----------------EXERCICE 3------------------
-// Using timestamps, find the exact time and date we will be in 80.000 hours.
-
-// Write a function to display the time and date for any amount of hours given in the future. Create a number input for the hours and listen for keyup events, dynamically display the date in the number of hours given by the input.
-
 //---3.1---
-// transform les 80.000h en milliseconde 80000*60*60*1000
+// Using timestamps, find the exact time and date we will be in 80.000 hours.
+// transformer les 80.000h en milliseconde 80000*60*60*1000
 
 let today80000hours = new Date(Date.now() + 80000 * 60 * 60 * 1000); //Date.now () pour avoir la date du jour j
 console.log(today80000hours);
 
 //---3.2---
+// Write a function to display the time and date for any amount of hours given in the future. Create a number input for the hours and listen for keyup events, dynamically display the date in the number of hours given by the input.
 //---APPROCHE---
-// no idea
+// créer un formulaire en HTML, récup les valeurs et ensuite mettre un eventlistener (dès que keyup) qui déclenche une fonction qui calcule la date du jour j + le nombre d'heure donnée par l'user.
 
-// let present = new Date();
-// let today8000 = new Date(Date.now() + 80000 * (60 * 60 * 1000)); // Add 80 000 hours to the current date
-// let inputHours = document.getElementById("input-hours");
-// let displayDate = document.getElementById("display-date");
+let inputHours = document.getElementById("inputHours");
 
-// console.log("Today's time : " + present);
-// console.log("Today's time + 80 000 days : " + today8000);
+inputHours.addEventListener("keyup", displayResults);
 
-// inputHours.addEventListener("keyup", displayResults);
-
-// function displayResults() {
-//   let addedHours = parseInt(inputHours.value);
-//   let updateDate = new Date(Date.now() + addedHours * (60 * 60 * 1000));
-//   if (addedHours >= 999999999) {
-//     displayDate.textContent = "Sorry, you are too far in the future";
-//   } else {
-//     displayDate.textContent = updateDate;
-//   }
-// }
+function displayResults() {
+  let addedHours = inputHours.value;
+  let updateDate = new Date(Date.now() + addedHours * (60 * 60 * 1000)); //convertir les heures en milliseconde comme d'hab
+  console.log(updateDate);
+}
