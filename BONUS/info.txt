@@ -1,0 +1,11 @@
+marche a suivre:
+
+ date = newDate(date.now)
+let jour du mois = date.getDate()
+let jour de la semaine = date.getDay()
+let heures = date.getHours();
+let minutes = date.getMinutes();
+let secondes = date.getSecondes();
+
+puis style en css blablabla 
+setInterval (1000) pour refresh toute les 1s 
