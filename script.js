@@ -72,7 +72,7 @@ field.addEventListener("input", function () {
   let daySinceUserBday = Math.floor(
     (currentDate - userDate) / (1000 * 60 * 60 * 24)
   );
-  console.log("Days passed since date of birth: " + daySinceUserBday + " days");
+  console.log("Days passed since your date of birth: " + daySinceUserBday + " days");
 });
 
 //----------------EXERCICE 3------------------
