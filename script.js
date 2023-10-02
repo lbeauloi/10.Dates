@@ -62,18 +62,17 @@ daysinceBday();
 //---2.2---
 //---APPROCHE---
 //meme base que le 2.1, juste on demande à l'user d'entrer sa date de naissance. info : https://gomakethings.com/how-to-get-and-set-a-date-object-from-an-input-with-vanilla-javascript/
-// pour ça on ajoute un form dans le HTML
 
-const currentDate = new Date();
-let field = document.querySelector("#birthday");
-// eventlistener qui va déclencher à l'input et exécuter la fonction
-field.addEventListener("input", function () {
-  let userDate = new Date(field.value);
-  let daySinceUserBday = Math.floor(
-    (currentDate - userDate) / (1000 * 60 * 60 * 24)
-  );
-  console.log("Days passed since your date of birth: " + daySinceUserBday + " days");
-});
+let currentDate = new Date();
+function daysCalculator(newDateString, currentDate) {
+  let newDate = new Date(newDateString);
+  let results = Math.floor((currentDate - newDate) / (1000 * 60 * 60 * 24));
+  console.log(results + " days have passed since " + newDate);
+}
+
+daysCalculator("2023-10-01", currentDate);
+daysCalculator("1997-06-04", currentDate);
+daysCalculator("2003-10-30", currentDate);
 
 //----------------EXERCICE 3------------------
 // Using timestamps, find the exact time and date we will be in 80000 hours.
